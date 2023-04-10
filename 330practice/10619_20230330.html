@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>오늘의 목표</h1>
+    <ul>
+        <li>테이블 이해하기</li>
+        <li>오디오 비디오 재생시키기</li>
+    </ul>
+    <table border="1">
+        <tr>
+            <td>홍길동</td>
+            <td>98</td>
+            <td>99</td>
+        </tr>
+        
+        <tr>
+            <td>김철수</td>
+            <td>80</td>
+            <td>89</td>
+        </tr>
+    </table>
+    <br>
+    <hr>
+    <br>
+    <table border="1">
+        <tr>
+            <th colspan="5">시간표</th>
+            
+        </tr>
+        <tr>
+            <th>mon</th>
+            <th>tue</th>
+            <th>wed</th>
+            <th>thu</th>
+            <th>fri</th>
+        </tr>
+        <tr>
+            <td>국어</td>
+            <td>영어</td>
+            <td>수학</td>
+            <td>과학</td>
+            <td rowspan="3">휴강</td>
+        </tr>
+        <tr>
+            <th colspan="4">점심시간</th>
+        </tr>
+        <tr>
+            <td>국어</td>
+            <td>수학</td>
+            <td>영어</td>
+            <td>과학</td>   
+        </tr>
+    </table>
+    <br>
+    <hr>
+    <br>
+    <!--테이블에 이미지 넣기-->
+    
+    <table border="1">
+        <caption>고전 영화 리스트</caption>
+        <tr>
+            <td><img src="./img/movie1.png" width="100" height="200"/></td>
+            
+            <td><img src="./img/movie2.png" width="100" height="200"/></td>
+            
+            <td><img src="./img/movie3.png" width="100" height="200"/></td>
+        </tr>
+    </table>
+    <br>
+    <hr>
+    <br>
+    <!--비디오 태그-->
+    <!--autoplay src controls loop poster muted preload-->
+
+    <video src="./vid/movie.ogv" controls autoplay muted loop></video>
+    <video controls autoplay>
+        <source src="./vid/trailer.mp4" type="video/mp4">
+        
+        <source src="./vid/trailer.ogv" type="video/ogv">
+        
+        <source src="./vid/trailer.webm" type="video/webm">
+
+    </video>
+    <br>
+    
+    <!--오디오 태그-->
+    <audio src="./aud/old_pop.mp3" autoplay controls loop volume="1"></audio>
+
+</body>         
+</html>
