@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>입력 양식 추가 실습</h1>
+    <form method="post" action="" name="form1">
+        <fieldset>
+            <legend>인적사항 조사</legend>
+        이름을 입력하세요: <input type="text" required placeholder="예시) 홍길동"> <br>
+        
+        학번을 입력하세요: <input type="text" placeholder="예시) 10600" autofocus><br>
+        좋아하는 색을 고르세요 <input type="color"><br>
+        </fieldset>
+        <input type="submit" value="제출"> <br>
+        <input type="number" name= "number" min="130" max="200">
+        좋아하는 숫자르  고르세요!<br>
+        <input type="range"  min="1" max="10" value="5"><br>
+        비밀번호를 분실했을때 질문 : 
+        <select name="password">
+            <option value="1"> 내가 테이넌 동네 이름은?</option>
+            <option value="2"> 나의 초등학교 별명은?</option>
+            <option value="3"> 어렸을 때 키욷던 나우키</option>
+        </select>
+        <input list="browesers" name="brr">
+        <datalist id="browesers">
+            <option value="chrome"></option>
+            <option value="edge"></option>
+            <option value="scagacri"></option>
+        </datalist>
+        <input type="file" accept="image/jpg,image/png">
+    </form>
+</body>
+</html>
