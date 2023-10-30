@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #mousetext {         
+            width: 200px;
+            height: 50px;
+            background-color: #253746;
+            outline: none;
+            border: 1px solid transparent;
+            color: white;
+            font-size: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            margin-left: 10px;
+            margin-right: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="mousetext">
+        마우스를 올려주세요.
+    </div>
+    <script>
+        document.getElementById('mousetext').addEventListener('mouseover', (event) =>{
+            document.getElementById('mousetext').innerHTML = "감사합니다."
+        })
+    </script>
+</body>
+
+</html>
