@@ -1,0 +1,102 @@
+<html>
+<head>
+    
+    <script>
+        function cal() {
+            let answer = document.getElementById("answer").value;
+            let s = document.getElementById("problem").value;
+            let solution = eval(s);
+
+            if (solution == answer)
+            {
+                alert("정답입니다!")
+            }
+            else {
+                alert("틀렸습니다! 정답은 "+solution)
+            }
+        }
+        function re() {
+            const operators = ['+', '-', '*', '/'];
+            const getRandomOperator = () => operators[Math.floor(Math.random() * operators.length)];
+            const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+            let randomExpression = '';
+            for (let i = 0; i < 4; i++) {
+                randomExpression += getRandomNumber(1, 10);
+
+                if (i < 3) {
+                    randomExpression += ' ' + getRandomOperator() + ' ';
+                }
+            }
+
+            document.getElementById("problem").value = randomExpression;
+
+            document.getElementById("answer").value = "";
+        }
+    
+ </script>
+ <style>
+    @font-face {
+        font-family: 'SUIT-Regular';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+    }
+    h1{
+        margin-top: 0;
+        font-size: 64px;
+    }
+    body {
+        font-family: 'SUIT-Regular';
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .txt {
+        font-family: 'SUIT-Regular';
+        display: block;
+        width: 450px;
+        height: 45px;
+        border: 1px solid #253746;
+        border-radius: 10px;
+        outline: none;
+        font-size: 16px;
+        padding-left: 10px;
+        box-sizing: border-box;
+        text-align: center;
+    } 
+    .btn {
+        font-family: 'SUIT-Regular';
+        width: 200px;
+        height: 50px;
+        background-color: #2E9AFE;
+        outline: none;
+        border: 1px solid transparent;
+        color: white;
+        font-size: 16px;
+        border-radius: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+    .parent {
+        width: 900px;
+        display: flex;
+        justify-content: center;
+        margin-top: 30;
+    }
+</style>
+</head>
+<body>
+        <h1>Math Quiz</h1>
+        <input type="text" id="problem" value="12*2+20-30" class="txt"><br>
+        <input type="text" id="answer" class="txt"  placeholder="정답을 입력해주세요."
+        >
+        <div class="parent">
+            <button onclick="re()" class="btn">문제 바꾸기</button>
+            <button onclick="cal()" class="btn">정답 알아보기</button>
+        </div>
+</body>

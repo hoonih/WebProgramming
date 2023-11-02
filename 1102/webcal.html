@@ -1,0 +1,124 @@
+<html>
+<head>
+    
+    <script>
+        function input(buttonText) {
+            let problemInput = document.getElementById("problem");
+            problemInput.value += buttonText;
+        }
+        function cal() {
+            let s = document.getElementById("problem").value;
+            let solution = eval(s);
+            document.getElementById("problem").value = solution
+        }
+
+ </script>
+ <style>
+    @font-face {
+        font-family: 'SUIT-Regular';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+    }
+    h1{
+        margin-top: 0;
+        font-size: 64px;
+    }
+    body {
+        font-family: 'SUIT-Regular';
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .txt {
+        font-family: 'SUIT-Regular';
+        display: block;
+        width: 642px;
+        height: 50px;
+        border: 1px solid #DFDFDF;
+        border-radius: 10px;
+        outline: none;
+        font-size: 16px;
+        box-sizing: border-box;
+        text-align: center;
+    } 
+    .btn {
+        font-family: 'SUIT-Regular';
+        width: 150px;
+        height: 50px;
+        background-color: #EDEDED;
+        outline: none;
+        border: 1px solid transparent;
+        color: black;
+        font-size: 16px;
+        border-radius: 8px;
+        margin-left: 7px;
+        margin-right: 7px;
+        cursor: pointer;
+    }
+    .btn2 {
+        font-family: 'SUIT-Regular';
+        width: 150px;
+        height: 50px;
+        background-color: #DFDFDF;
+        outline: none;
+        border: 1px solid transparent;
+        color: black;
+        font-size: 16px;
+        border-radius: 8px;
+        margin-left: 7px;
+        margin-right: 7px;
+        cursor: pointer;
+    }
+    .btn3 {
+        font-family: 'SUIT-Regular';
+        width: 314px;
+        height: 50px;
+        background-color: #DFDFDF;
+        outline: none;
+        border: 1px solid transparent;
+        color: black;
+        font-size: 16px;
+        border-radius: 8px;
+        margin-left: 7px;
+        margin-right: 7px;
+        cursor: pointer;
+    }
+    .parent {
+        width: 900px;
+        display: flex;
+        justify-content: center;
+        margin-top: 10;
+    }
+</style>
+</head>
+<body>
+        <h1>멋진 계산기</h1>
+        <input type="text" id="problem" value="" class="txt"><br>
+        <div class="parent">
+            <button onclick="input('1')" class="btn">1</button>
+            <button onclick="input('2')" class="btn">2</button>
+            <button onclick="input('3')" class="btn">3</button>
+            <button onclick="input('/')" class="btn2">÷</button>
+        </div>
+        <div class="parent">
+            <button onclick="input('4')" class="btn">4</button>
+            <button onclick="input('5')" class="btn">5</button>
+            <button onclick="input('6')" class="btn">6</button>
+            <button onclick="input('*')" class="btn2">×</button>
+        </div>
+        <div class="parent">
+            <button onclick="input('7')" class="btn">7</button>
+            <button onclick="input('8')" class="btn">8</button>
+            <button onclick="input('9')" class="btn">9</button>
+            <button onclick="input('-')" class="btn2">-</button>
+        </div>
+        <div class="parent">
+            <button onclick="input('+')" class="btn2">+</button>
+            <button onclick="input('0')" class="btn">0</button>
+            <button onclick="cal()" class="btn3">=</button>
+        </div>
+</body>
