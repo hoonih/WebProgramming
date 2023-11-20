@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<style>
+    #myCanvas {
+        background-color: rgb(241, 239, 209);
+        border: 1px dotted blue;
+    }
+</style>
+
+<body>
+    <label for="brushSize">Brush Size:</label>
+    <input type="range" id="brushSize" min="1" max="50" value="5">
+    <input type="color" id="colorPicker" value="#000000">
+    <button onclick="clearCanvas();">Clear Canvas</button><br>
+    <canvas id="myCanvas" width="600" height="400"></canvas>
+    <script>
+        let canvas = document.getElementById("myCanvas");
+        let context = canvas.getContext("2d");
+        let last_x = 0, last_y = 0;
+        let draw_mode = false;
+
+        function clearCanvas() {
+            context.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+        canvas.addEventListener("mousemove", function (event) {
+            if (!draw_mode) return;
+            let x = event.offsetX;
+            let y = event.offsetY;
+            draw(x, y);
+        });
+
+        canvas.addEventListener("mousedown", function (event) {
+            last_x = event.offsetX;
+            last_y = event.offsetY;
+            context.beginPath();
+            context.moveTo(last_x, last_y);
+            draw_mode = true;
+        });
+
+        canvas.addEventListener("mouseup", function () {
+            draw_mode = false;
+        });
+
+        canvas.addEventListener("mouseout", function () {
+            draw_mode = false;
+        });
+
+        function draw(x, y) {
+            let brushSize = document.getElementById("brushSize").value;
+            let color = document.getElementById("colorPicker").value;
+
+            context.lineWidth = brushSize;
+            context.lineCap = "round";
+            context.strokeStyle = draw_mode ? color : "white";
+
+            context.lineTo(x, y);
+            context.stroke();
+            context.beginPath();
+            context.moveTo(x, y);
+        }
+    </script>
+</body>
+</html>
